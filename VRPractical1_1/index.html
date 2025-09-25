@@ -4,14 +4,87 @@
   </head>
   <body>
     <a-scene>
-      <a-box wireframe ="true" position="0 0 0" width ="2" height = "2" depth = "2" color="#4CC3D9">
-        <a-cylinder position = "0 0 0" radius = "0.5" height = "2" depth = "2" rotation = "0 180 0"> </a-cylinder>
+    <a-entity class = "car">
+
+      <a-box class = "body" wireframe="true" position = "-1 0.5 -3" width ="2" color="gray" >
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 -0.5" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 0.5" color="black"> </a-torus>
+        <!---Window--->
+        <a-box position="0 0 -0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
+        <a-box position="0 0 0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
       </a-box>
-     
-    
-     
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+
+      <a-box class = "head" wireframe="true"  position ="-2.75 0.5 -3" width = "1.5" color="gray" >
+        <!---Light--->
+        <a-sphere radius="0.15" position="-0.8 -0.25 -0.45" color="yellow" ></a-sphere>
+        <a-sphere radius="0.15" position="-0.8 -0.25 0.45"  color="yellow" ></a-sphere>
+        <!---wiper--->
+        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 0.28" rotation= "30 45 0" color="black"></a-box>
+      
+      </a-box>
+
+      <a-box class="body" wireframe="true" position="1.75 0.5 -3" width ="3.5" color="black">
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 0.5" color="black"> </a-torus>
+        <!---Light--->
+        <a-sphere radius="0.15" position="1.8 -0.15 -0.45" color="red"></a-sphere>
+        <a-sphere radius="0.15" position="1.8 -0.15 0.45" color="red"></a-sphere>
+        <!---Exhaust--->
+        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 0.25" rotation="90 0 0" color="gray"></a-cylinder>
+        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 -0.25" rotation="90 0 0" color="gray"></a-cylinder>
+        <!---Door--->
+        <a-box position="0 0 -0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+        <a-box position="0 0 0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+      </a-box>
+      
+      
+    </a-entity>
+
+    <a-entity class = "car" position ="10 0 0" rotation ="0 90 0">
+
+      <a-box class = "body" wireframe="true" position = "-1 0.5 -3" width ="2" color="gray" >
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 -0.5" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 0.5" color="black"> </a-torus>
+        <!---Window--->
+        <a-box position="0 0 -0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
+        <a-box position="0 0 0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
+      </a-box>
+
+      <a-box class = "head" wireframe="true"  position ="-2.75 0.5 -3" width = "1.5" color="gray" >
+        <!---Light--->
+        <a-sphere radius="0.15" position="-0.8 -0.25 -0.45" color="yellow" ></a-sphere>
+        <a-sphere radius="0.15" position="-0.8 -0.25 0.45"  color="yellow" ></a-sphere>
+        <!---wiper--->
+        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 0.28" rotation= "30 45 0" color="black"></a-box>
+      
+      </a-box>
+
+      <a-box class="body" wireframe="true" position="1.75 0.5 -3" width ="3.5" color="black">
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 -0.5" color="black"> </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 0.5" color="black"> </a-torus>
+        <!---Light--->
+        <a-sphere radius="0.15" position="1.8 -0.15 -0.45" color="red"></a-sphere>
+        <a-sphere radius="0.15" position="1.8 -0.15 0.45" color="red"></a-sphere>
+        <!---Exhaust--->
+        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 0.25" rotation="90 0 0" color="gray"></a-cylinder>
+        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 -0.25" rotation="90 0 0" color="gray"></a-cylinder>
+        <!---Door--->
+        <a-box position="0 0 -0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+        <a-box position="0 0 0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+      </a-box>
+      
+      
+    </a-entity>
+</a-scene>
   </body>
 </html>
