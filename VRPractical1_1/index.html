@@ -4,87 +4,330 @@
   </head>
   <body>
     <a-scene>
-    <a-entity class = "car">
-
-      <a-box class = "body" wireframe="true" position = "-1 0.5 -3" width ="2" color="gray" >
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black" > </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 -0.5" color="black" > </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 0.5" color="black"> </a-torus>
-        <!---Window--->
-        <a-box position="0 0 -0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
-        <a-box position="0 0 0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
+    
+    <a-sky color="#87CEEB"></a-sky>
+    <a-plane src="street.png" height="100" width="100" rotation="-90 0 0" repeat="10 10"></a-plane>
+    <a-box class ="SchoolBus"  width="4" color="yellow" position="0 1 -10">
+      <a-box class="head"  position="-1.5 0 0" color="yellow">
+        <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 0.55" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 -0.45" color="black" > </a-torus>
+        <!---License--->
+        <a-box width="0.37" height="0.15" depth="0.01" position="-0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+        <!---Mirrors--->
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 -0.18"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 0.18"></a-box>
+        <!---Windows--->
+        <a-box width="0.85" height="0.55" depth="0.01"  color="skyblue" opacity="0.5" position="-0.55 0.15 0" rotation="0 90 0"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 0.55" color="skyblue" opacity="0.5"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 -0.55" color="skyblue" opacity="0.5"></a-box>
       </a-box>
 
-      <a-box class = "head" wireframe="true"  position ="-2.75 0.5 -3" width = "1.5" color="gray" >
-        <!---Light--->
-        <a-sphere radius="0.15" position="-0.8 -0.25 -0.45" color="yellow" ></a-sphere>
-        <a-sphere radius="0.15" position="-0.8 -0.25 0.45"  color="yellow" ></a-sphere>
-        <!---wiper--->
-        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 -0.18" rotation= "-10 45 0" color="black"></a-box>
-        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 0.28" rotation= "30 45 0" color="black"></a-box>
-      
+      <a-box class="body"  width color ="yellow" height="2" width="4.5" depth="1.25" position="0.35 0.15 0" rotation="90 90 0">
+      <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        
+      </a-box>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 -0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 0.55"></a-entity>
+      <!---Pattern--->
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+
+      <!---Window--->
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <!---Door--->
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 0.55"color="#444"></a-box>
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 -0.55"color="#444"></a-box>
+
+      <a-box class="End"  width color ="yellow" position="1.5" width="0.25">
+      <!---License--->
+      <a-box width="0.37" height="0.15" depth="0.01" position="0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+      <!---Light--->
+      <a-circle radius ="0.05" position="0.55 -0.25 0.44" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 0.35" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.32" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.42" color="red" rotation="0 90 0"></a-circle>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 -0.55"></a-entity>
+    </a-box>
+    </a-box>
+
+    <a-box class ="SchoolBus"  width="4" color="yellow" position="-9 1 -10" rotation="0 90 0">
+      <a-box class="head"  position="-1.5 0 0" color="yellow">
+        <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 0.55" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 -0.45" color="black" > </a-torus>
+        <!---License--->
+        <a-box width="0.37" height="0.15" depth="0.01" position="-0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+        <!---Mirrors--->
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 -0.18"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 0.18"></a-box>
+        <!---Windows--->
+        <a-box width="0.85" height="0.55" depth="0.01"  color="skyblue" opacity="0.5" position="-0.55 0.15 0" rotation="0 90 0"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 0.55" color="skyblue" opacity="0.5"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 -0.55" color="skyblue" opacity="0.5"></a-box>
       </a-box>
 
-      <a-box class="body" wireframe="true" position="1.75 0.5 -3" width ="3.5" color="black">
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 0.5" color="black"> </a-torus>
-        <!---Light--->
-        <a-sphere radius="0.15" position="1.8 -0.15 -0.45" color="red"></a-sphere>
-        <a-sphere radius="0.15" position="1.8 -0.15 0.45" color="red"></a-sphere>
-        <!---Exhaust--->
-        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 0.25" rotation="90 0 0" color="gray"></a-cylinder>
-        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 -0.25" rotation="90 0 0" color="gray"></a-cylinder>
-        <!---Door--->
-        <a-box position="0 0 -0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
-        <a-box position="0 0 0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+      <a-box class="body"  width color ="yellow" height="2" width="4.5" depth="1.25" position="0.35 0.15 0" rotation="90 90 0">
+      <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        
       </a-box>
-      
-      
-    </a-entity>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 -0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 0.55"></a-entity>
+      <!---Pattern--->
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 -0.5" rotation="0 0 90" color="black"></a-cylinder>
 
-    <a-entity class = "car" position ="10 0 0" rotation ="0 90 0">
+      <!---Window--->
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <!---Door--->
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 0.55"color="#444"></a-box>
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 -0.55"color="#444"></a-box>
 
-      <a-box class = "body" wireframe="true" position = "-1 0.5 -3" width ="2" color="gray" >
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black" > </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 -0.5" color="black" > </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1 -0.65 0.5" color="black"> </a-torus>
-        <!---Window--->
-        <a-box position="0 0 -0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
-        <a-box position="0 0 0.51" width="1" height="0.6" depth="0.01" color="skyblue" opacity="0.5"></a-box>
+      <a-box class="End"  width color ="yellow" position="1.5" width="0.25">
+      <!---License--->
+      <a-box width="0.37" height="0.15" depth="0.01" position="0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+      <!---Light--->
+      <a-circle radius ="0.05" position="0.55 -0.25 0.44" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 0.35" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.32" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.42" color="red" rotation="0 90 0"></a-circle>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 -0.55"></a-entity>
+    </a-box>
+    </a-box>
+    
+    <a-box class ="SchoolBus"  width="4" color="yellow" position="5 1 -10" rotation="0 -90 0">
+      <a-box class="head"  position="-1.5 0 0" color="yellow">
+        <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 0.55" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 -0.45" color="black" > </a-torus>
+        <!---License--->
+        <a-box width="0.37" height="0.15" depth="0.01" position="-0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+        <!---Mirrors--->
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 -0.18"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 0.18"></a-box>
+        <!---Windows--->
+        <a-box width="0.85" height="0.55" depth="0.01"  color="skyblue" opacity="0.5" position="-0.55 0.15 0" rotation="0 90 0"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 0.55" color="skyblue" opacity="0.5"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 -0.55" color="skyblue" opacity="0.5"></a-box>
       </a-box>
 
-      <a-box class = "head" wireframe="true"  position ="-2.75 0.5 -3" width = "1.5" color="gray" >
-        <!---Light--->
-        <a-sphere radius="0.15" position="-0.8 -0.25 -0.45" color="yellow" ></a-sphere>
-        <a-sphere radius="0.15" position="-0.8 -0.25 0.45"  color="yellow" ></a-sphere>
-        <!---wiper--->
-        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 -0.18" rotation= "-10 45 0" color="black"></a-box>
-        <a-box width="0.05" height="0.48" depth="0.012" position ="-0.80 -0.07 0.28" rotation= "30 45 0" color="black"></a-box>
-      
+      <a-box class="body"  width color ="yellow" height="2" width="4.5" depth="1.25" position="0.35 0.15 0" rotation="90 90 0">
+      <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        
+      </a-box>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 -0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 0.55"></a-entity>
+      <!---Pattern--->
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+
+      <!---Window--->
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <!---Door--->
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 0.55"color="#444"></a-box>
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 -0.55"color="#444"></a-box>
+
+      <a-box class="End"  width color ="yellow" position="1.5" width="0.25">
+      <!---License--->
+      <a-box width="0.37" height="0.15" depth="0.01" position="0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+      <!---Light--->
+      <a-circle radius ="0.05" position="0.55 -0.25 0.44" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 0.35" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.32" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.42" color="red" rotation="0 90 0"></a-circle>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 -0.55"></a-entity>
+    </a-box>
+    </a-box>
+    
+    <a-box class ="SchoolBus"  width="4" color="yellow" position="5 1 -5" rotation="0 -90 0">
+      <a-box class="head"  position="-1.5 0 0" color="yellow">
+        <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 0.55" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 -0.45" color="black" > </a-torus>
+        <!---License--->
+        <a-box width="0.37" height="0.15" depth="0.01" position="-0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+        <!---Mirrors--->
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 -0.18"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 0.18"></a-box>
+        <!---Windows--->
+        <a-box width="0.85" height="0.55" depth="0.01"  color="skyblue" opacity="0.5" position="-0.55 0.15 0" rotation="0 90 0"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 0.55" color="skyblue" opacity="0.5"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 -0.55" color="skyblue" opacity="0.5"></a-box>
       </a-box>
 
-      <a-box class="body" wireframe="true" position="1.75 0.5 -3" width ="3.5" color="black">
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "-1 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 -0.5" color="black"> </a-torus>
-        <a-torus radius ="0.25" radius-tubular="0.05" position = "1.75 -0.65 0.5" color="black"> </a-torus>
-        <!---Light--->
-        <a-sphere radius="0.15" position="1.8 -0.15 -0.45" color="red"></a-sphere>
-        <a-sphere radius="0.15" position="1.8 -0.15 0.45" color="red"></a-sphere>
-        <!---Exhaust--->
-        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 0.25" rotation="90 0 0" color="gray"></a-cylinder>
-        <a-cylinder radius="0.05" height="0.2" position="1.75 -0.45 -0.25" rotation="90 0 0" color="gray"></a-cylinder>
-        <!---Door--->
-        <a-box position="0 0 -0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
-        <a-box position="0 0 0.51" width="1.2" height="1" depth="0.01" color="#444"></a-box>
+      <a-box class="body"  width color ="yellow" height="2" width="4.5" depth="1.25" position="0.35 0.15 0" rotation="90 90 0">
+      <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        
       </a-box>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 -0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 0.55"></a-entity>
+      <!---Pattern--->
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+
+      <!---Window--->
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <!---Door--->
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 0.55"color="#444"></a-box>
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 -0.55"color="#444"></a-box>
+
+      <a-box class="End"  width color ="yellow" position="1.5" width="0.25">
+      <!---License--->
+      <a-box width="0.37" height="0.15" depth="0.01" position="0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+      <!---Light--->
+      <a-circle radius ="0.05" position="0.55 -0.25 0.44" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 0.35" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.32" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.42" color="red" rotation="0 90 0"></a-circle>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 -0.55"></a-entity>
+    </a-box>
+    </a-box>
+
+    <a-box class ="SchoolBus"  width="4" color="yellow" position="5 1 -15" rotation="0 -90 0">
+      <a-box class="head"  position="-1.5 0 0" color="yellow">
+        <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 0.55" color="black" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.24 -0.43 -0.45" color="black" > </a-torus>
+        <!---License--->
+        <a-box width="0.37" height="0.15" depth="0.01" position="-0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+        <!---Mirrors--->
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 -0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.05" height="0.38" depth="0.012" position ="-0.5 0.67 0.18" rotation= "-10 45 0" color="black"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 -0.18"></a-box>
+        <a-box width="0.025" height="0.25" depth="0.15" position="-0.5 0.97 0.18"></a-box>
+        <!---Windows--->
+        <a-box width="0.85" height="0.55" depth="0.01"  color="skyblue" opacity="0.5" position="-0.55 0.15 0" rotation="0 90 0"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 0.55" color="skyblue" opacity="0.5"></a-box>
+        <a-box width="0.75" height="0.45" depth="0.01" position="0 0.25 -0.55" color="skyblue" opacity="0.5"></a-box>
+      </a-box>
+
+      <a-box class="body"  width color ="yellow" height="2" width="4.5" depth="1.25" position="0.35 0.15 0" rotation="90 90 0">
+      <!---Wheels--->
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        <a-torus radius ="0.25" radius-tubular="0.05" position = "-0.55 0.95 0.55" color="black" rotation="0 90 0" > </a-torus>
+        
+      </a-box>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 -0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png"  position="-0.48 -0.15 0.55"></a-entity>
+      <!---Pattern--->
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 0 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.15 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+      <a-cylinder radius="0.03" height="1.75" position="0.35 -0.3 -0.5" rotation="0 0 90" color="black"></a-cylinder>
+
+      <!---Window--->
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="-0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.45 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="0.9 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <a-box width="0.35" height="0.45" depth="0.01" position="1.35 0.35 -0.55" color="skyblue" opacity="0.5"></a-box>
+      <!---Door--->
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 0.55"color="#444"></a-box>
+      <a-box  width="0.35" height="1" depth="0.01" position="-0.825 0 -0.55"color="#444"></a-box>
+
+      <a-box class="End"  width color ="yellow" position="1.5" width="0.25">
+      <!---License--->
+      <a-box width="0.37" height="0.15" depth="0.01" position="0.5 -0.25 0" rotation="0 90 0" src="SchoolBusLicensePlate.jpg"></a-box>
+      <!---Light--->
+      <a-circle radius ="0.05" position="0.55 -0.25 0.44" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 0.35" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.32" color="red" rotation="0 90 0"></a-circle>
+      <a-circle radius ="0.05" position="0.55 -0.25 -0.42" color="red" rotation="0 90 0"></a-circle>
+      <!---StopSign--->
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 0.55"></a-entity>
+      <a-entity geometry="primitive: circle; radius: 0.15; segments:8" material="side: double; src:StopSign.png" position="0.29 -0.15 -0.55"></a-entity>
+    </a-box>
+    </a-box>
+
       
-      
-    </a-entity>
 </a-scene>
   </body>
 </html>
