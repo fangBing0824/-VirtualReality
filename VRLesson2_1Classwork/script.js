@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded",function() {
   let dodecahedron=document.createElement("a-dodecahedron")
   
   //Challenge 3: Change the <a-dodecahedron>'s position, radius and color
-  dodecahedron.setAttribute("position",{x:-5,y:2,z:10});
+  dodecahedron.setAttribute("position",{x:0,y:2,z:-1});
   dodecahedron.setAttribute("color","red");
   dodecahedron.setAttribute("radius","1");
 
