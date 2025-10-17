@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded",function() {
     createCloud(x,5,z);
   }
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
-  for (let i=0; i<20;i++){
+  for (let i=0; i<50;i+10){
     let x = rnd(-20,20);
     let z = rnd(-20,10);
      createHouse(x,0,z);
@@ -85,8 +85,25 @@ function createHouse(x,y,z){
   roof.setAttribute("position",{x:0, y:5, z:0}); 
   roof.setAttribute("rotation",{x:-90, y:0, z:0});
 
+  let window=document.createElement("a-box");
+  window.setAttribute("depth","0.2");
+  window.setAttribute("width","1");
+  window.setAttribute("height","1");
+  window.setAttribute("position",{x:-0.5, y:2, z:2});
+  window.setAttribute("color","skyblue");
+  window.setAttribute("opacity","0.5");
+
+  let door=document.createElement("a-box");
+  door.setAttribute("depth","0.2");
+  door.setAttribute("width","1");
+  door.setAttribute("height","1.5");
+  door.setAttribute("position",{x:0.95, y:0.7, z:2});
+  door.setAttribute("color","brown");
+
   house.append(wall)
   house.append(roof)
+  house.append(window)
+  house.append(door)
 
   house.setAttribute("position",{x:x,y:y,z:z});
   scene.append(house)
