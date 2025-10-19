@@ -1,4 +1,4 @@
-let scene,car,pokemonball,rocket,dude ;
+let scene,car,pokemonball,rocket,dude,sun ;
 
 window.addEventListener("DOMContentLoaded",function() {
     scene = document.querySelector("a-scene");    
@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded",function() {
     pokemonball = document.querySelector("#pokemonball");
     rocket = document.querySelector("#rocket");
     dude = document.querySelector("#dude");
+    sun = document.querySelector("#sun");
 
     car.a=0;
     car.da=0.015;
@@ -17,7 +18,10 @@ window.addEventListener("DOMContentLoaded",function() {
     rocket.da=0.3;
 
     dude.s=0;
-    dude.ds=0.5;
+    dude.ds=0.005;
+
+    sun.o=0;
+    sun.do=0.01;
 
     loop();
 })
@@ -33,10 +37,12 @@ function loop(){
 /* rocket is flying up */
   rocket.a+=rocket.da;
   rocket.setAttribute("position",{x:0, y:rocket.a, z:0});
-
+/* dude is growing up */
   dude.s += dude.ds;
-  dude.setAttribute("radius","dude.s");
+  dude.setAttribute("scale", { x: dude.s, y: dude.s, z: dude.s });
 
+  sun.o +=sun.do;
+  sun.setAttribute("opacity",sun.o);
 
   window.requestAnimationFrame(loop);
 }
