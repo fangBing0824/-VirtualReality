@@ -7,19 +7,17 @@ function rnd(l, u){
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); //CSS Selector
 
-  for(let i = 0; i < 180; i++){
-    let x = rnd(-80,80);
+  for(let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
     let z = rnd(-20,20);
     createTree(x,0,z);
     
   
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
     createCloud(x,5,z);
-  } 
+   
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
-  for(let i = 0; i < 50; i++){
-    let x = rnd(-80,80);
-    let z = rnd(-20,20);
+  
     createHouse(x,0,z);
   }
     
