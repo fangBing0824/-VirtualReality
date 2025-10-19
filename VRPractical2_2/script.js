@@ -18,10 +18,11 @@ window.addEventListener("DOMContentLoaded",function() {
     rocket.da=0.3;
 
     dude.s=0;
-    dude.ds=0.005;
+    dude.ds=0.01;
 
     sun.o=0;
     sun.do=0.01;
+    
 
     loop();
 })
@@ -38,9 +39,9 @@ function loop(){
   rocket.a+=rocket.da;
   rocket.setAttribute("position",{x:0, y:rocket.a, z:0});
 /* dude is growing up */
-  dude.s += dude.ds;
-  dude.setAttribute("scale", { x: dude.s, y: dude.s, z: dude.s });
-/* sun is fading in */
+  dude.s +=dude.ds;
+  dude.setAttribute("scale",{x:dude.s, y:dude.s, z:dude.s});
+/* sun is fading in*/
   sun.o +=sun.do;
   sun.setAttribute("opacity",sun.o);
 
