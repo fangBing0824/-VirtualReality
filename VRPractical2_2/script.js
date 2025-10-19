@@ -40,7 +40,7 @@ function loop(){
 /* dude is growing up */
   dude.s += dude.ds;
   dude.setAttribute("scale", { x: dude.s, y: dude.s, z: dude.s });
-
+/* sun is fading in */
   sun.o +=sun.do;
   sun.setAttribute("opacity",sun.o);
 
