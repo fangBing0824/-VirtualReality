@@ -3,7 +3,7 @@ class Cloud{
     this.x = x;
     this.y = y;
     this.z = z;
-    this.dx = 0.01;
+    this.dx = 0.05;
 
     this.obj = document.createElement("a-entity");
     let shapes = ["a-dodecahedron","a-icosahedron","a-octahedron","a-tetrahedron"];
