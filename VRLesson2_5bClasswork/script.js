@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let i = 0; i < 20; i++){
     let x = rnd(-20,20);
     let z = rnd(-20,20);
-    let cloud = new Cloud(x,z);
+    let cloud = new Cloud(x,15,z);
     clouds.push(cloud);
   }
  
