@@ -69,7 +69,7 @@ class Rocket{
     }
 
     launch(){
-        this.y -=this.dy;
+        this.y +=this.dy;
         this.rocket.setAttribute("position",{x:this.x,y:this.y,z:this.z})
         
 

@@ -7,19 +7,19 @@ window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); 
  
    
-  for (let i=0; i<5; i++){
-    let x = rnd(-40,40);
-    let z = rnd(-40,40);
+  for (let i=0; i<100; i++){
+    let x = rnd(-50,60);
+    let z = rnd(-50,60);
 
-    let rocket = new Rocket(x,5,z);
+    let rocket = new Rocket(x,0,z);
     rockets.push(rocket);
   }
 
-  for(let i=0; i<10; i++){
-    let x = rnd(-40,40);
-    let z = rnd(-40,40);
+  for(let i=0; i<100; i++){
+    let x = rnd(-50,60);
+    let z = rnd(-50,60);
 
-    let ufo = new UFO(x,10,z);
+    let ufo = new UFO(x,50,z);
     ufos.push(ufo);
   }
 
