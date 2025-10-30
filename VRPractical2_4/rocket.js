@@ -2,7 +2,7 @@ class Rocket{
     constructor(x,y,z){
         this.x=x;
         this.y=y;
-        this.dy=0.05;
+        this.dy=Math.random()*0.06+0.02;
         this.z=z;
 
         this.rocket=document.createElement("a-entity");
@@ -64,13 +64,27 @@ class Rocket{
         window.setAttribute("color","skyblue");
         this.rocket.append(window);
 
+        let flame = document.createElement("a-cone");
+        flame.setAttribute("radius-bottom", "1");
+        flame.setAttribute("radius-top", "0");
+        flame.setAttribute("height", "3");
+        flame.setAttribute("color", "orange");
+        flame.setAttribute("position", { x: 0, y: 0, z: 0 });
+        flame.setAttribute("rotation", { x: 180, y: 0, z: 0 });
+        this.rocket.append(flame);
+
+
         this.rocket.setAttribute("position",{x:x,y:y,z:z});
         scene.append(this.rocket);
     }
 
     launch(){
         this.y +=this.dy;
-        this.rocket.setAttribute("position",{x:this.x,y:this.y,z:this.z})
+        this.rocket.setAttribute("position",{x:this.x,y:this.y,z:this.z});
+
+        if (this.y>60){
+            this.y=Math.random()*-5-1;
+        }
         
 
     }
