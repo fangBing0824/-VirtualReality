@@ -11,18 +11,21 @@
 */
 
 let maze = [
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "-----C-------------------",
+  "T-BBBBB--BBBBBBBBBBBBBBB-T",
+  "T-B----B-------B-------B-T",
+  "T-B--B-B-BSBB--B-BBBB--B-T",
+  "T-B-B----B----BB---B---B-T",
+  "T-B-BSBB-B-BBB----BBBB-B-T",
+  "T-B------B--B-S--B----BB-T",
+  "T-BBBBBB-BBBSBBBB-B-B--B-T",
+  "T-B---S--B-----B--B-B--B-T",
+  "T-B--BBB-B-BBBBB--B-B--B-T",
+  "T-B----B-B--S---B----B-B-T",
+  "T-B-BB-BBB---BB-BBBB-B-B-T",
+  "T-B-BB----S----B---------T",
+  "T-BBBBBBBBBBBBBBBBBBB-BBB-",
+  "TTTTTTTTTTTTTTTTTTT---TT-"
 ];
 
 /* Challenge 2
@@ -37,10 +40,35 @@ window.addEventListener("DOMContentLoaded",function() {
     /* Challenge 3
       Choose a technique to traverse the each character in the string.
     */ 
+  
     /* Challenge 4
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
+
+    let row = maze[r];
+    for (let c=0; c< row.length;c++){
+     let ch = row[c];
+
+     let x=c;
+     let z=-r;
+     let y=0.5;
+
+     if (ch =="B"){
+      new Block(x,y,z);
+    }
+      if (ch=="T"){
+      new Tree(x,y,z);
+    }
+
+    if (ch =="S"){
+      new Treasure(x,y,z);
+    }
+
+    if (ch =="C"){
+      new Sign(x,1,z);
+    }
+   }
   }
 
 })
