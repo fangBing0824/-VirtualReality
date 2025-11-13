@@ -11,22 +11,24 @@
 */
 
 let maze = [
-  "-----C-------------------",
+  "-----C------G-------G-----",
   "T-BBBBB--BBBBBBBBBBBBBBB-T",
-  "T-B----B-------B-------B-T",
-  "T-B--B-B-BSBB--B-BBBB--B-T",
-  "T-B-B----B----BB---B---B-T",
-  "T-B-BSBB-B-BBB----BBBB-B-T",
+  "T-B----B-------B--G----B-T",
+  "T-B--B-B-BSBB--B-BBBBG-B-T",
+  "T-B-B-G--B-G--BB---B---B-T",
+  "T-B-BSBB-B-BBB-G--BBBB-B-T",
   "T-B------B--B-S--B----BB-T",
   "T-BBBBBB-BBBSBBBB-B-B--B-T",
-  "T-B---S--B-----B--B-B--B-T",
+  "T-B---S--B--G--B--B-B--B-T",
   "T-B--BBB-B-BBBBB--B-B--B-T",
-  "T-B----B-B--S---B----B-B-T",
+  "T-B----B-B--S---B--G-B-B-T",
   "T-B-BB-BBB---BB-BBBB-B-B-T",
-  "T-B-BB----S----B---------T",
+  "T-B-BB--G-S----B---------T",
   "T-BBBBBBBBBBBBBBBBBBB-BBB-",
-  "TTTTTTTTTTTTTTTTTTT---TT-"
+  "TTTTTTTTTTTTTTTTTTT-G-TT-"
 ];
+
+let ghosts = [];
 
 /* Challenge 2
    Add appropriate classes to use as objects in your map.  Choose characters to represent these objects and position them on the map.   In Challenge 5 and 6, you will generate the map using the character representation of the objects you chose to place in the world. Get Creative!
@@ -68,7 +70,22 @@ window.addEventListener("DOMContentLoaded",function() {
     if (ch =="C"){
       new Sign(x,1,z);
     }
+
+    if (ch =="G"){
+      let g = new Ghost(x,y,z);
+      ghosts.push(g);
+    }
    }
   }
 
+
+  loop();
+
 })
+
+function loop(){
+  for (let g of ghosts){
+    g.move();
+  }
+  requestAnimationFrame(loop);
+}
