@@ -58,7 +58,7 @@ class UFO{
 
     }
     update() {
-        if(this.hover === true){
+        if(this.hover){
             this.y -= this.dy;
             if(this.y <= 0){
                 this.y = 0;

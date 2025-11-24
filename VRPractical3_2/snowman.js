@@ -17,15 +17,13 @@ class Snowman {
 
   update() {
 
-    if(this.rotate === true){
+    if(this.rotate){
       this.r += this.dr;
       this.snowman.setAttribute("rotation", {x: 0, y: this.r, z: 0});
     //   console.log("rotating, rotate: ", this.rotate);
-    } else {
-      this.r = 0;
-      this.snowman.setAttribute("rotation", {x: 0, y: this.r, z: 0});
+    } 
     //   console.log("not rotating, rotate: ", this.rotate);
-    }
+    
   }
 
 }
