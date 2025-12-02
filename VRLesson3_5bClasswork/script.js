@@ -25,7 +25,7 @@ function loop(){
   */
 
      for (let p of potholes) {
-      let d = distance(camera, p.obj);
+      let d = distance(p.obj,camera);
       if (d < 1.7) {
       camera.drop = true;
     }
