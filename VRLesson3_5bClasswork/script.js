@@ -23,7 +23,7 @@ function loop(){
      Go through the potholes array.  If the distance between you and a 
      pothole is less than 1.7, set the camera's drop variable to true. 
   */
-
+ 
      for (let p of potholes) {
       let d = distance(p.obj,camera);
       if (d < 1.7) {
