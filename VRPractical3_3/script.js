@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0, ufos=[];
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -15,13 +15,29 @@ window.addEventListener("DOMContentLoaded",function() {
   
   setTimeout(loop,100);
   setTimeout(countdown,100);
+
+  for(let i=0; i<10; i++){
+    let x = rnd(-100,100);
+    let z = rnd(-100,100);
+
+    let ufo = new UFO(x,50,z);
+    ufos.push(ufo);
+
+    loop();
+  }
 })
+
+  
 
 function loop(){
   if(bullet){
     bullet.fire();
   }
  
+  for(let ufo of ufos){
+    ufo.invade();
+  }
+
   window.requestAnimationFrame(loop);
 }
 

@@ -2,7 +2,7 @@ class UFO{
     constructor(x,y,z){
         this.x=x;
         this.y=y;
-        this.dy=0.1;
+        this.dy=0.01;
         this.z=z;
 
         this.ufo=document.createElement("a-entity");
@@ -53,8 +53,8 @@ class UFO{
      invade(){
         this.y -=this.dy;
         this.ufo.setAttribute("position",{x:this.x,y:this.y,z:this.z});
-        if (this.y<=5){
-            this.y = 5
+        if (this.y<=0){
+            this.y = 0
         }
         
 
