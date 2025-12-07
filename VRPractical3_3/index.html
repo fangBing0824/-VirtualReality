@@ -7,9 +7,20 @@
   </head>
   <body>
     <a-scene>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-camera position="0 1.6 0"></a-camera>
+      
+      <a-sky color="#ECECEC" src="bk.jpg"></a-sky>
+      <a-camera position="0 1.6 0">
+        <a-cursor raycaster="objects: [clickable]">
+          <a-text id="bullets" position="-2.5 1.5 -1" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+          <a-text id="score" position="-2.5 1.25 -1" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text><a-text id="score" position="-2.5 1 -1" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+          <a-text id="countdown" position="-2.5 1 -1" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text><a-text id="score" position="-2.5 1 -1" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+
+          <a-text id="endText" position="-1 0 0" value="" color="#fff" scale="0.5 0.5 0.5" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+          
+          
+        </a-cursor>
+      </a-camera>
+      
     </a-scene>
   </body>
 </html>
