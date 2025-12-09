@@ -1,28 +1,15 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, ammo_boxes = [], ammo_count = 10, ufos=[], bulletText, scoreText, score=0, endText, isGameOver=false, countdownText, countdown = 20;
+let scene, camera, bullet, ammo_boxes = [], ammo_count = 10, ufos=[], bulletText, scoreText, score=0, time, t = 25;
+let gameOver = false;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
   bulletText = document.querySelector("#bullets");
   scoreText = document.querySelector("#score");
-  countdownText = document.querySelector("#countdown");
-  endText = document.querySelector("#endText");
+  time = document.getElementById("time");
 
-  this.setInterval(()=>{
-    countdownText.setAttribute("value",
-    `${Math.round(countdown*100)/100}`);
-    if(countdown <= 0){
-      isGameOver = true;
-      countdown = 0;
-
-    
-      endText.setAttribute("value",
-        `GameOver\n\nScore:  ${score}\nBullets:  ${ammo_count}`);
-    } else if (countdown > 0){
-      countdown -= 0.01
-    }
-  },10)
+  countdown();
 
   bulletText.setAttribute("value",
     `Bullets:  ${ammo_count}`);
@@ -40,9 +27,9 @@ window.addEventListener("DOMContentLoaded",function() {
   
   setTimeout(loop,100);
 
-  for(let i=0; i<10; i++){
-    let x = rnd(-50,50);
-    let z = rnd(-50,50);
+  for(let i=0; i<30; i++){
+    let x = rnd(-100,100);
+    let z = rnd(-100,100);
 
     let ufo = new UFO(x,50,z);
     ufos.push(ufo);
@@ -51,9 +38,24 @@ window.addEventListener("DOMContentLoaded",function() {
   }
 })
 
-  
+function countdown(){
+  time.setAttribute("value",`Time: ${t}`);
+  t--;
+
+  if (t < 0){
+    gameOver = true;
+    document.querySelector("#gameover").setAttribute("value","GAME OVER");
+    return;
+  }
+
+  setTimeout(countdown,1000);
+
+
+}
 
 function loop(){
+  if (gameOver) return;
+
  if(bullet){
     bullet.fire();
 

@@ -2,7 +2,7 @@ class UFO{
     constructor(x,y,z){
         this.x=x;
         this.y=y;
-        this.dy=0.01;
+        this.dy=0.005;
         this.z=z;
 
         this.s = 1;
