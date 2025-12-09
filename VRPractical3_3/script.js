@@ -45,7 +45,7 @@ function countdown(){
   if (t < 0){
     gameOver = true;
     document.querySelector("#gameover").setAttribute("value","GAME OVER");
-    return;
+    
   }
 
   setTimeout(countdown,1000);
